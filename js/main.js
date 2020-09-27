@@ -25,7 +25,7 @@
         this.el.classList.add("pressed");
         this.game.addCurrentNum() ;
         
-        if(this.game.getCurrentNum() === this.game.getLevel() **2){
+        if(this.game.getCurrentNum() === (this.game.getLevel() **2)+1){
           clearTimeout(this.game.getTimeoutId());
         }
       }
@@ -51,7 +51,7 @@
 
     activate(){
       const nums = [];
-      for(let i = 0; i < this.game.getLevel() **2 ; i++ ){
+      for(let i = 1; i < (this.game.getLevel() **2)+1 ; i++ ){
         nums.push(i);
       }
 
@@ -92,7 +92,7 @@
       if(typeof this.timeoutId !== "undefined"){
       clearTimeout(this.timeoutId);
       }
-      this.currentNum = 0;
+      this.currentNum = 1;
       this.board.activate();
       
       this.startTime = Date.now();
